@@ -74,7 +74,7 @@ call :download "https://npcap.com/dist/npcap-1.79.exe", "npcap.exe"
 "%TEMP%\npcap.exe" /loopback_support=yes
 
 call :download "https://sourceforge.net/projects/systeminformer/files/latest/download", "sysinformer.exe"
-"%TEMP%\HxDSetup.exe" /VERYSILENT /NORESTART 
+"%TEMP%\sysinformer.exe" /VERYSILENT /NORESTART 
 
 powershell.exe -Command "New-Item -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Force"
 powershell.exe -Command "Set-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Name EnableScriptBlockLogging -Value 1 -Force"
