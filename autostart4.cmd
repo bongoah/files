@@ -30,31 +30,31 @@ call :download "https://aka.ms/vs/17/release/vc_redist.x64.exe", "vcredist_x64.e
 "%TEMP%\vcredist_x64.exe" /passive /norestart
 
 call :download "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.1_build/ghidra_11.1_PUBLIC_20240607.zip", "ghidra.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\ghidra.zip" -o %BASE_PATH%\Desktop\ghidra
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\ghidra.zip" -o"%BASE_PATH%\Desktop\ghidra"
 
 call :download "https://download.sysinternals.com/files/SysinternalsSuite.zip", "sysinternals.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\sysinternals.zip" -o %BASE_PATH%\Desktop\sysinternals
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\sysinternals.zip" -o"%BASE_PATH%\Desktop\sysinternals"
 
 call :download "https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml", "sysmonconfig-export.xml"
 "%USERPROFILE%\Desktop\sysinternals\Sysmon64.exe" -accepteula -i %TEMP%\sysmonconfig-export.xml
 
 call :download "https://sourceforge.net/projects/x64dbg/files/latest/download", "x64dbg.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\x64dbg.zip" -o %BASE_PATH%\Desktop\x64dbg
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\x64dbg.zip" -o"%BASE_PATH%\Desktop\x64dbg"
 
 call :download "https://github.com/dnSpyEx/dnSpy/releases/latest/download/dnSpy-net-win64.zip", "dnSpy.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\dnSpy.zip" -o %BASE_PATH%\Desktop\dnSpy
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\dnSpy.zip" -o"%BASE_PATH%\Desktop\dnSpy"
 
 call :download "https://github.com/horsicq/DIE-engine/releases/download/3.09/die_win64_portable_3.09_x64.zip", "detectiteasy.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\detectiteasy.zip" -o %BASE_PATH%\Desktop\detectiteasy
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\detectiteasy.zip" -o"%BASE_PATH%\Desktop\detectiteasy"
 
 call :download "https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-win64.zip", "upx.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\upx.zip" -o %BASE_PATH%\Desktop\upx
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\upx.zip" -o"%BASE_PATH%\Desktop\upx"
 
 call :download "https://github.com/hasherezade/pe-bear/releases/download/v0.6.7.3/PE-bear_0.6.7.3_x64_win_vs19.zip", "pebear.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\pebear.zip" -o %BASE_PATH%\Desktop\pebear
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\pebear.zip" -o"%BASE_PATH%\Desktop\pebear"
 
 call :download "https://www.winitor.com/tools/pestudio/current/pestudio.zip", "pestudio.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\pestudio.zip" -o %BASE_PATH%\Desktop\pestudio
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\pestudio.zip" -o"%BASE_PATH%\Desktop\pestudio"
 
 call :download "https://www.python.org/ftp/python/2.7.18/python-2.7.18.amd64.msi", "python2.msi"
 msiexec /i "%TEMP%\python2.msi" /qn /norestart
@@ -76,4 +76,4 @@ rem powershell script block logging
 powershell.exe -Command "New-Item -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Force"
 powershell.exe -Command "Set-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Name EnableScriptBlockLogging -Value 1 -Force"
 
-exit /B 0
+exit
