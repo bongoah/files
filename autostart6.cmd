@@ -64,7 +64,7 @@ call :download "https://www.python.org/ftp/python/3.12.4/python-3.12.4-amd64.exe
 "%TEMP%\python3.exe" /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
 
 call :download "https://mh-nexus.de/downloads/HxDSetup.zip", "hxd.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\hxd.zip" -o "%TEMP%" > nul
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\hxd.zip" -o"%TEMP%" > nul
 "%TEMP%\HxDSetup.exe" /VERYSILENT /NORESTART 
 
 call :download "https://2.na.dl.wireshark.org/win64/Wireshark-4.2.5-x64.exe", "wireshark.exe"
@@ -75,5 +75,3 @@ call :download "https://npcap.com/dist/npcap-1.79.exe", "npcap.exe"
 
 powershell.exe -Command "New-Item -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Force"
 powershell.exe -Command "Set-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Name EnableScriptBlockLogging -Value 1 -Force"
-
-exit
