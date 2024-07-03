@@ -3,7 +3,7 @@ goto :start
 
 :download 
 echo Downloading %~2...
-curl -L "%~1" --output "%TEMP%\%~2" > nul
+curl -s -L "%~1" --output "%TEMP%\%~2" > nul
 exit /b 0
 
 :start
