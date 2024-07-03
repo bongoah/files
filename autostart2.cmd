@@ -1,4 +1,6 @@
+set BASE_PATH=C:\users\WDAGUtilityAccount\Downloads
 goto :start
+
 :download 
 echo Downloading %~2...
 curl -L "%~1" --output "%TEMP%\%~2"
