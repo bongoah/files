@@ -3,7 +3,7 @@ goto :start
 
 :download 
 echo Downloading %~2...
-curl -L "%~1" --output "%TEMP%\%~2"
+curl -L "%~1" --output "%TEMP%\%~2" > nul
 exit /b 0
 
 :start
@@ -30,31 +30,31 @@ call :download "https://aka.ms/vs/17/release/vc_redist.x64.exe", "vcredist_x64.e
 "%TEMP%\vcredist_x64.exe" /passive /norestart
 
 call :download "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.1_build/ghidra_11.1_PUBLIC_20240607.zip", "ghidra.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\ghidra.zip" -o"%BASE_PATH%\Desktop\ghidra"
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\ghidra.zip" -o"%BASE_PATH%\Desktop\ghidra" > nul
 
 call :download "https://download.sysinternals.com/files/SysinternalsSuite.zip", "sysinternals.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\sysinternals.zip" -o"%BASE_PATH%\Desktop\sysinternals"
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\sysinternals.zip" -o"%BASE_PATH%\Desktop\sysinternals" > nul
 
 call :download "https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml", "sysmonconfig-export.xml"
 "%USERPROFILE%\Desktop\sysinternals\Sysmon64.exe" -accepteula -i %TEMP%\sysmonconfig-export.xml
 
 call :download "https://sourceforge.net/projects/x64dbg/files/latest/download", "x64dbg.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\x64dbg.zip" -o"%BASE_PATH%\Desktop\x64dbg"
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\x64dbg.zip" -o"%BASE_PATH%\Desktop\x64dbg" > nul
 
 call :download "https://github.com/dnSpyEx/dnSpy/releases/latest/download/dnSpy-net-win64.zip", "dnSpy.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\dnSpy.zip" -o"%BASE_PATH%\Desktop\dnSpy"
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\dnSpy.zip" -o"%BASE_PATH%\Desktop\dnSpy" > nul
 
 call :download "https://github.com/horsicq/DIE-engine/releases/download/3.09/die_win64_portable_3.09_x64.zip", "detectiteasy.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\detectiteasy.zip" -o"%BASE_PATH%\Desktop\detectiteasy"
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\detectiteasy.zip" -o"%BASE_PATH%\Desktop\detectiteasy" > nul
 
 call :download "https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-win64.zip", "upx.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\upx.zip" -o"%BASE_PATH%\Desktop\upx"
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\upx.zip" -o"%BASE_PATH%\Desktop\upx" > nul
 
 call :download "https://github.com/hasherezade/pe-bear/releases/download/v0.6.7.3/PE-bear_0.6.7.3_x64_win_vs19.zip", "pebear.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\pebear.zip" -o"%BASE_PATH%\Desktop\pebear"
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\pebear.zip" -o"%BASE_PATH%\Desktop\pebear" > nul
 
 call :download "https://www.winitor.com/tools/pestudio/current/pestudio.zip", "pestudio.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\pestudio.zip" -o"%BASE_PATH%\Desktop\pestudio"
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\pestudio.zip" -o"%BASE_PATH%\Desktop\pestudio" > nul
 
 call :download "https://www.python.org/ftp/python/2.7.18/python-2.7.18.amd64.msi", "python2.msi"
 msiexec /i "%TEMP%\python2.msi" /qn /norestart
@@ -63,7 +63,7 @@ call :download "https://www.python.org/ftp/python/3.12.4/python-3.12.4-amd64.exe
 "%TEMP%\python3.exe" /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
 
 call :download "https://mh-nexus.de/downloads/HxDSetup.zip", "hxd.zip"
-"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\hxd.zip" -o "%TEMP%"
+"%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\hxd.zip" -o "%TEMP%" > nul
 "%TEMP%\HxDSetup.exe" /VERYSILENT /NORESTART 
 
 call :download "https://2.na.dl.wireshark.org/win64/Wireshark-4.2.5-x64.exe", "wireshark.exe"
