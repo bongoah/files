@@ -1,3 +1,4 @@
+@echo off
 set BASE_PATH=C:\users\WDAGUtilityAccount
 goto :start
 
