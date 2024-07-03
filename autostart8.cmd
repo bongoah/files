@@ -67,6 +67,9 @@ call :download "https://mh-nexus.de/downloads/HxDSetup.zip", "hxd.zip"
 "%PROGRAMFILES%\7-Zip\7z.exe" x -aoa "%TEMP%\hxd.zip" -o"%TEMP%" > nul
 "%TEMP%\HxDSetup.exe" /VERYSILENT /NORESTART 
 
+call :download "https://sourceforge.net/projects/systeminformer/files/latest/download", "sysinformer.exe"
+"%TEMP%\sysinformer.exe" /VERYSILENT /NORESTART 
+
 call :download "https://2.na.dl.wireshark.org/win64/Wireshark-4.2.5-x64.exe", "wireshark.exe"
 "%TEMP%\wireshark.exe" /S /desktopicon=yes
 
