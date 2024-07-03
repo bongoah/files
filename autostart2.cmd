@@ -73,3 +73,5 @@ call :download "https://npcap.com/dist/npcap-1.79.exe", "npcap.exe"
 rem powershell script block logging
 powershell.exe -Command "New-Item -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Force"
 powershell.exe -Command "Set-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Name EnableScriptBlockLogging -Value 1 -Force"
+
+exit /B 0
