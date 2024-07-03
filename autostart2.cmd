@@ -1,4 +1,4 @@
-set BASE_PATH=C:\users\WDAGUtilityAccount\Downloads
+set BASE_PATH=C:\users\WDAGUtilityAccount
 goto :start
 
 :download 
