@@ -1,9 +1,10 @@
-
+goto :start
 :download 
 echo Downloading %~2...
 curl -L "%~1" --output "%TEMP%\%~2"
 exit /b 0
 
+:start
 call :download "https://update.code.visualstudio.com/latest/win32-x64-user/stable", "vscode.exe"
 "%TEMP%\vscode.exe" /verysilent /suppressmsgboxes /MERGETASKS="!runcode,desktopicon,quicklaunchicon,addcontextmenufiles,addcontextmenufolders,addtopath"
 
