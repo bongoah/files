@@ -72,7 +72,6 @@ call :download "https://2.na.dl.wireshark.org/win64/Wireshark-4.2.5-x64.exe", "w
 call :download "https://npcap.com/dist/npcap-1.79.exe", "npcap.exe"
 "%TEMP%\npcap.exe" /loopback_support=yes
 
-rem powershell script block logging
 powershell.exe -Command "New-Item -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Force"
 powershell.exe -Command "Set-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging -Name EnableScriptBlockLogging -Value 1 -Force"
 
