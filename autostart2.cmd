@@ -10,7 +10,7 @@ exit /b 0
 call :download "https://update.code.visualstudio.com/latest/win32-x64-user/stable", "vscode.exe"
 "%TEMP%\vscode.exe" /verysilent /suppressmsgboxes /MERGETASKS="!runcode,desktopicon,quicklaunchicon,addcontextmenufiles,addcontextmenufolders,addtopath"
 
-call :download "https://www.7-zip.org/a/7z2406-x64.exe", "7zip.msi"
+call :download "https://www.7-zip.org/a/7z2407-x64.msi", "7zip.msi"
 msiexec /i "%TEMP%\7zip.msi" /qn /norestart
 
 call :download "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-windows-jdk.msi", "corretto.msi"
