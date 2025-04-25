@@ -8,6 +8,8 @@ curl -s -L "%~1" --output "%TEMP%\%~2" > nul
 exit /b 0
 
 :start
+call :download "https://referrals.brave.com/latest/BraveBrowserSetup-BRV011.exe", "brave.exe"
+
 call :download "https://update.code.visualstudio.com/latest/win32-x64-user/stable", "vscode.exe"
 "%TEMP%\vscode.exe" /verysilent /suppressmsgboxes /MERGETASKS="!runcode,desktopicon,quicklaunchicon,addcontextmenufiles,addcontextmenufolders,addtopath"
 
